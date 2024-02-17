@@ -1,0 +1,78 @@
+$green:#19A598;
+$black:#1C1C1C;
+$bg-image:linear-gradient($green, $green); // background-image
+$bg-size:3%; // background-size
+$n:15; // number of background-images
+
+// returns list => $all-bg-imgs:$bg-image, $bg-image, $bg-image, ... $n; 
+// my inspiration for sass lists https://github.com/sass/sass/issues/852 
+@function create-bg-imgs($n){
+  $all-bg-imgs:();
+  @for $i from 1 through $n {$all-bg-imgs:append($all-bg-imgs, $bg-image, comma);};
+  @return $all-bg-imgs;
+}
+
+// returns list => $bg-pos:(random(100)*1%), ... $n;
+@function pos-y(){
+  $bg-pos-y:();
+  @for $i from 1 through $n {$bg-pos-y:append($bg-pos-y, (random(100)*1%), comma);};
+  @return $bg-pos-y;
+}
+$bg-pos-y:pos-y();
+
+// returns list of background-position:x y;
+// y is taken from $bg-pos-y
+@function bg-pos(){
+  $bg-pos:();  
+  @for $i from 1 through $n {
+    $horizontal:(random(150)-25*1%);
+    $vertical:nth($bg-pos-y, $i);
+    $bg-pos:append($bg-pos,($horizontal $vertical),comma);  
+  };
+  @return $bg-pos;
+} 
+
+*, *:before, *:after {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, body {
+  width:100%;
+  height:100%;
+  background-color:$black;
+}
+
+.dataFlow {
+  width:100%;
+  height:100%;
+  background-image:create-bg-imgs($n);
+  background-repeat:no-repeat;
+  background-size:($bg-size) ($bg-size / 5);
+  animation:lft-rght 100s infinite linear;
+  display: flex;
+  justify-content: space-around;
+}
+
+@keyframes lft-rght {
+  @for $i from 0 to 101 {
+    #{$i *1%} {
+      background-position:bg-pos();
+    }
+  }
+}
+.video_container{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video{
+  width: 100%;
+  height: 700px;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover;
+}
