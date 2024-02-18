@@ -1,1 +1,203 @@
-Voice
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "main.css" %}">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js" integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="dataFlow2">
+        <div class="container">
+            <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+        </div>
+
+        <div class="sound-wave">
+            <div class="bar" style="animation-duration: 0.505071s;"></div>
+            <div class="bar" style="animation-duration: 0.334231s;"></div>
+            <div class="bar" style="animation-duration: 0.654986s;"></div>
+            <div class="bar" style="animation-duration: 0.609712s;"></div>
+            <div class="bar" style="animation-duration: 0.283486s;"></div>
+            <div class="bar" style="animation-duration: 0.398215s;"></div>
+            <div class="bar" style="animation-duration: 0.279033s;"></div>
+            <div class="bar" style="animation-duration: 0.65053s;"></div>
+            <div class="bar" style="animation-duration: 0.305359s;"></div>
+            <div class="bar" style="animation-duration: 0.625384s;"></div>
+            <div class="bar" style="animation-duration: 0.433989s;"></div>
+            <div class="bar" style="animation-duration: 0.629847s;"></div>
+            <div class="bar" style="animation-duration: 0.526963s;"></div>
+            <div class="bar" style="animation-duration: 0.3043s;"></div>
+            <div class="bar" style="animation-duration: 0.63082s;"></div>
+            <div class="bar" style="animation-duration: 0.69322s;"></div>
+            <div class="bar" style="animation-duration: 0.302405s;"></div>
+            <div class="bar" style="animation-duration: 0.208824s;"></div>
+            <div class="bar" style="animation-duration: 0.266138s;"></div>
+            <div class="bar" style="animation-duration: 0.682084s;"></div>
+            <div class="bar" style="animation-duration: 0.677546s;"></div>
+            <div class="bar" style="animation-duration: 0.286892s;"></div>
+            <div class="bar" style="animation-duration: 0.426445s;"></div>
+            <div class="bar" style="animation-duration: 0.336312s;"></div>
+            <div class="bar" style="animation-duration: 0.236724s;"></div>
+            <div class="bar" style="animation-duration: 0.598074s;"></div>
+            <div class="bar" style="animation-duration: 0.317204s;"></div>
+            <div class="bar" style="animation-duration: 0.236605s;"></div>
+            <div class="bar" style="animation-duration: 0.651241s;"></div>
+            <div class="bar" style="animation-duration: 0.63495s;"></div>
+            <div class="bar" style="animation-duration: 0.411747s;"></div>
+            <div class="bar" style="animation-duration: 0.276043s;"></div>
+            <div class="bar" style="animation-duration: 0.301289s;"></div>
+            <div class="bar" style="animation-duration: 0.527071s;"></div>
+            <div class="bar" style="animation-duration: 0.502742s;"></div>
+            <div class="bar" style="animation-duration: 0.474413s;"></div>
+            <div class="bar" style="animation-duration: 0.541043s;"></div>
+            <div class="bar" style="animation-duration: 0.251688s;"></div>
+            <div class="bar" style="animation-duration: 0.469952s;"></div>
+            <div class="bar" style="animation-duration: 0.423068s;"></div>
+            <div class="bar" style="animation-duration: 0.309464s;"></div>
+            <div class="bar" style="animation-duration: 0.468544s;"></div>
+            <div class="bar" style="animation-duration: 0.322628s;"></div>
+            <div class="bar" style="animation-duration: 0.637634s;"></div>
+            <div class="bar" style="animation-duration: 0.345595s;"></div>
+            <div class="bar" style="animation-duration: 0.552309s;"></div>
+            <div class="bar" style="animation-duration: 0.285574s;"></div>
+            <div class="bar" style="animation-duration: 0.556387s;"></div>
+            <div class="bar" style="animation-duration: 0.598209s;"></div>
+            <div class="bar" style="animation-duration: 0.417859s;"></div>
+            <div class="bar" style="animation-duration: 0.238072s;"></div>
+            <div class="bar" style="animation-duration: 0.541578s;"></div>
+            <div class="bar" style="animation-duration: 0.559984s;"></div>
+            <div class="bar" style="animation-duration: 0.318844s;"></div>
+            <div class="bar" style="animation-duration: 0.373165s;"></div>
+            <div class="bar" style="animation-duration: 0.564102s;"></div>
+            <div class="bar" style="animation-duration: 0.646735s;"></div>
+            <div class="bar" style="animation-duration: 0.672238s;"></div>
+            <div class="bar" style="animation-duration: 0.305245s;"></div>
+            <div class="bar" style="animation-duration: 0.398407s;"></div>
+            <div class="bar" style="animation-duration: 0.344614s;"></div>
+            <div class="bar" style="animation-duration: 0.464416s;"></div>
+            <div class="bar" style="animation-duration: 0.694974s;"></div>
+            <div class="bar" style="animation-duration: 0.682009s;"></div>
+            <div class="bar" style="animation-duration: 0.383536s;"></div>
+            <div class="bar" style="animation-duration: 0.570847s;"></div>
+            <div class="bar" style="animation-duration: 0.670139s;"></div>
+            <div class="bar" style="animation-duration: 0.404741s;"></div>
+            <div class="bar" style="animation-duration: 0.512754s;"></div>
+            <div class="bar" style="animation-duration: 0.555373s;"></div>
+            <div class="bar" style="animation-duration: 0.670905s;"></div>
+            <div class="bar" style="animation-duration: 0.281735s;"></div>
+            <div class="bar" style="animation-duration: 0.431279s;"></div>
+            <div class="bar" style="animation-duration: 0.41799s;"></div>
+            <div class="bar" style="animation-duration: 0.407358s;"></div>
+            <div class="bar" style="animation-duration: 0.518815s;"></div>
+            <div class="bar" style="animation-duration: 0.570244s;"></div>
+            <div class="bar" style="animation-duration: 0.42731s;"></div>
+            <div class="bar" style="animation-duration: 0.390272s;"></div>
+            <div class="bar" style="animation-duration: 0.52694s;"></div>
+            <div class="bar" style="animation-duration: 0.498309s;"></div>
+            <div class="bar" style="animation-duration: 0.433659s;"></div>
+            <div class="bar" style="animation-duration: 0.573803s;"></div>
+            <div class="bar" style="animation-duration: 0.505357s;"></div>
+            <div class="bar" style="animation-duration: 0.334465s;"></div>
+            <div class="bar" style="animation-duration: 0.430178s;"></div>
+            <div class="bar" style="animation-duration: 0.697924s;"></div>
+            <div class="bar" style="animation-duration: 0.204747s;"></div>
+            <div class="bar" style="animation-duration: 0.506897s;"></div>
+            <div class="bar" style="animation-duration: 0.349622s;"></div>
+            <div class="bar" style="animation-duration: 0.246731s;"></div>
+            <div class="bar" style="animation-duration: 0.507873s;"></div>
+            <div class="bar" style="animation-duration: 0.603244s;"></div>
+            <div class="bar" style="animation-duration: 0.667796s;"></div>
+            <div class="bar" style="animation-duration: 0.477765s;"></div>
+            <div class="bar" style="animation-duration: 0.595379s;"></div>
+            <div class="bar" style="animation-duration: 0.31781s;"></div>
+            <div class="bar" style="animation-duration: 0.662466s;"></div>
+            <div class="bar" style="animation-duration: 0.623098s;"></div>
+            <div class="bar" style="animation-duration: 0.270564s;"></div>
+            <div class="bar" style="animation-duration: 0.525555s;"></div>
+            <div class="bar" style="animation-duration: 0.396102s;"></div>
+            <div class="bar" style="animation-duration: 0.670928s;"></div>
+            <div class="bar" style="animation-duration: 0.54315s;"></div>
+            <div class="bar" style="animation-duration: 0.366109s;"></div>
+            <div class="bar" style="animation-duration: 0.46864s;"></div>
+            <div class="bar" style="animation-duration: 0.551018s;"></div>
+            <div class="bar" style="animation-duration: 0.519594s;"></div>
+            <div class="bar" style="animation-duration: 0.620298s;"></div>
+            <div class="bar" style="animation-duration: 0.641447s;"></div>
+            <div class="bar" style="animation-duration: 0.661058s;"></div>
+            <div class="bar" style="animation-duration: 0.279656s;"></div>
+            <div class="bar" style="animation-duration: 0.288996s;"></div>
+            <div class="bar" style="animation-duration: 0.699713s;"></div>
+            <div class="bar" style="animation-duration: 0.422882s;"></div>
+            <div class="bar" style="animation-duration: 0.312049s;"></div>
+            <div class="bar" style="animation-duration: 0.304745s;"></div>
+            <div class="bar" style="animation-duration: 0.377874s;"></div>
+            <div class="bar" style="animation-duration: 0.631951s;"></div>
+            <div class="bar" style="animation-duration: 0.338349s;"></div>
+            <div class="bar" style="animation-duration: 0.241338s;"></div>
+            <div class="bar" style="animation-duration: 0.419631s;"></div>
+            <div class="bar" style="animation-duration: 0.20802s;"></div>
+            <div class="bar" style="animation-duration: 0.448961s;"></div>
+            <div class="bar" style="animation-duration: 0.642621s;"></div>
+            <div class="bar" style="animation-duration: 0.470628s;"></div>
+            <div class="bar" style="animation-duration: 0.530579s;"></div>
+            <div class="bar" style="animation-duration: 0.36035s;"></div>
+            <div class="bar" style="animation-duration: 0.690984s;"></div>
+            <div class="bar" style="animation-duration: 0.451787s;"></div>
+            <div class="bar" style="animation-duration: 0.500583s;"></div>
+            <div class="bar" style="animation-duration: 0.348518s;"></div>
+            <div class="bar" style="animation-duration: 0.621985s;"></div>
+            <div class="bar" style="animation-duration: 0.582282s;"></div>
+            <div class="bar" style="animation-duration: 0.405792s;"></div>
+            <div class="bar" style="animation-duration: 0.437948s;"></div>
+            <div class="bar" style="animation-duration: 0.319781s;"></div>
+            <div class="bar" style="animation-duration: 0.610452s;"></div>
+            <div class="bar" style="animation-duration: 0.429512s;"></div>
+            <div class="bar" style="animation-duration: 0.6039s;"></div>
+            <div class="bar" style="animation-duration: 0.655408s;"></div>
+            <div class="bar" style="animation-duration: 0.443474s;"></div>
+            <div class="bar" style="animation-duration: 0.585355s;"></div>
+            <div class="bar" style="animation-duration: 0.688665s;"></div>
+            <div class="bar" style="animation-duration: 0.632589s;"></div>
+            <div class="bar" style="animation-duration: 0.365487s;"></div>
+            <div class="bar" style="animation-duration: 0.488219s;"></div>
+            <div class="bar" style="animation-duration: 0.682281s;"></div>
+            <div class="bar" style="animation-duration: 0.400727s;"></div>
+            <div class="bar" style="animation-duration: 0.269122s;"></div>
+            <div class="bar" style="animation-duration: 0.452963s;"></div>
+            <div class="bar" style="animation-duration: 0.547717s;"></div>
+            <div class="bar" style="animation-duration: 0.574311s;"></div>
+            <div class="bar" style="animation-duration: 0.556399s;"></div>
+            <div class="bar" style="animation-duration: 0.677276s;"></div>
+            <div class="bar" style="animation-duration: 0.45713s;"></div>
+            <div class="bar" style="animation-duration: 0.587183s;"></div>
+            <div class="bar" style="animation-duration: 0.534821s;"></div>
+            <div class="bar" style="animation-duration: 0.664022s;"></div>
+            <div class="bar" style="animation-duration: 0.374554s;"></div>
+            <div class="bar" style="animation-duration: 0.505071s;"></div>
+            <div class="bar" style="animation-duration: 0.334231s;"></div>
+            <div class="bar" style="animation-duration: 0.654986s;"></div>
+            <div class="bar" style="animation-duration: 0.609712s;"></div>
+            <div class="bar" style="animation-duration: 0.283486s;"></div>
+            <div class="bar" style="animation-duration: 0.398215s;"></div>
+            <div class="bar" style="animation-duration: 0.279033s;"></div>
+            <div class="bar" style="animation-duration: 0.65053s;"></div>
+            <div class="bar" style="animation-duration: 0.505071s;"></div>
+            <div class="bar" style="animation-duration: 0.334231s;"></div>
+            <div class="bar" style="animation-duration: 0.654986s;"></div>
+            <div class="bar" style="animation-duration: 0.609712s;"></div>
+            <div class="bar" style="animation-duration: 0.283486s;"></div>
+            <div class="bar" style="animation-duration: 0.398215s;"></div>
+            <div class="bar" style="animation-duration: 0.279033s;"></div>
+            <div class="bar" style="animation-duration: 0.65053s;"></div>
+        </div>
+    </div>
+    <script src="{% static "main.js" %}"></script>
+    
+</body>
+
+</html>

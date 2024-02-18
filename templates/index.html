@@ -7,16 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "index_style.css" %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    {% comment %} <link href="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css"> {% endcomment %}
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@4000&display=swap" rel="stylesheet">
+    <link href="https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "style.css" %}">
     <title>Document</title>
 </head>
 <body>
     
-    <div class="btn_container">
-        <a href="{% url "camera" %}" class="btn btn-gradient-border btn-glow">Surdo to Voice</a>
-        <a href="{% url "voice" %}" class="btn btn-gradient-border btn-glow">Voice to Surdo</a>
+    <div class="container demo">
+        {% comment %} <div class="content">
+           <div id="large-header" class="large-header">
+              <canvas id="demo-canvas"></canvas>
+
+            </div>
+        </div> {% endcomment %}
+        <div class="btn_container">
+            <a href="{% url "camera" %}" class="btn btn-gradient-border btn-glow">Surdo</a>
+            <a href="{% url "voice" %}" class="btn btn-gradient-border btn-glow">Voice</a>
+        </div>
     </div>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+    <script src="{% static "main.js" %}"></script>
+    
     
 </body>
 </html>
