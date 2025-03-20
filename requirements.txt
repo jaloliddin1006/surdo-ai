@@ -1,4 +1,4 @@
-Django
+Django~=4.2.9
 opencv-python
 absl-py==2.1.0
 appnope==0.1.4
