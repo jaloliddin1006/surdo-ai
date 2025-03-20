@@ -17,11 +17,6 @@ class HomaPageView(View):
     def get(self, request):
         context = {}
         return render(request, "index.html", context)
-    
-
-    
-
-    
 
     
 def webcam():
