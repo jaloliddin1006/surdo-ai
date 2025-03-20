@@ -6,8 +6,6 @@ from keras.models import Sequential
 from keras.layers import LSTM, Dense
 from keras.callbacks import TensorBoard
 
-
-
 mp_holistic = mp.solutions.holistic 
 mp_drawing = mp.solutions.drawing_utils 
 
