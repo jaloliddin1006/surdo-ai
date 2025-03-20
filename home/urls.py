@@ -8,3 +8,4 @@ urlpatterns = [
     path('surdo-voice/', views.VoicePageView.as_view(), name='voice'),
     path('video/', views.VideoPageView.as_view(), name='video'),
 ]
+
