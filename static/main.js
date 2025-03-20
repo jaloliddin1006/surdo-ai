@@ -51,10 +51,6 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 
 
 
-
-
-
-
 //////////////////////////////////////////////////////////
 window.addEventListener("load", () => {
     const bar = document.querySelectorAll(".bar");
