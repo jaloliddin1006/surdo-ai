@@ -20,3 +20,4 @@ class YourConsumer(WebsocketConsumer):
     #     # Front-endga yangi xabar o'tkazish
     #     print(json.dumps({"message": message}))
     #     await self.send(text_data=json.dumps({"message": message}))
+
